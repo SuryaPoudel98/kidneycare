@@ -16,7 +16,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-sm-2 text-right">
-                        <label for="for description" >Advertisement Title </label>
+                        <label for="for description">Advertisement Title </label>
                     </div>
                     <div class="col-sm-10">
                         <input type="text" class="col-xs-4" id="name" name="title" placeholder="Enter Advertisement Caption" value="{{ old('title') }}">
@@ -24,26 +24,43 @@
                 </div>
                 <div class="row" style="margin-top: 10px;">
                     <div class="col-sm-2 text-right">
-                    <label for="exampleInputFile">Upload Image File:</label>
+                        <label for="exampleInputFile">Upload Image File:</label>
                     </div>
                     <div class="col-sm-10">
-                    <input type="file"  name="image" placeholder="image" onchange="previewFile(this)" onclick="alert('image file must be height:200px and width:1000px')"  >
+                        <input type="file" name="image" placeholder="image" onchange="previewFile(this)" onclick="alert('image file must be height:200px and width:1000px')">
+                        @if($errors->has('image'))
+                        <div class="row" style="margin-top: 10px;">
+                        <div class="col-sm-6">
+                            <div class="alert alert-warning" role="alert">
+                                {{$errors->first('image')}}
+                            </div>
+                        </div>
+                        </div>
 
+                        @endif
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-sm-2 text-right">
+                        <label for="for description">Postion </label>
+                    </div>
+                    <div class="col-sm-10">
+                        <input type="text" class="col-xs-4" id="position" name="position" placeholder="Enter Position" value="{{ old('position') }}">
+                    </div>
+                </div>
             </div>
 
 
-        
+
             <div class="form-group">
                 <div class="row">
                     <div class="col-sm-2 text-right"></div>
                     <div class="col-sm-10">
-                    <button type="submit" class="btn btn-default">Submit</button>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </div>
                 </div>
-                </div>
-                
+
             </div>
         </form>
     </div>

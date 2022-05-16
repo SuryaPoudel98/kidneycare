@@ -10,11 +10,10 @@
     <section class="inner-banner py-5">
         <div class="w3l-breadcrumb py-lg-5">
             <div class="container pt-4 pb-sm-4">
-                <h4 class="inner-text-title font-weight-bold pt-sm-5 pt-4">{{ $BranchDetails[0]->branch_name ?? ''}}</h4>
-
+                <h4 class="inner-text-title font-weight-bold pt-sm-5 pt-4">{{ @$BranchDetails[0]->branch_name ?? ''}}</h4>
                 <ul class="breadcrumbs-custom-path">
                     <li><a href="/">Home</a></li>
-                    <li class="active"><i class="fas fa-angle-right mx-2"></i>{{ $BranchDetails[0]->branch_name  ?? ''}}</li>
+                    <li class="active"><i class="fas fa-angle-right mx-2"></i>{{ @$BranchDetails[0]->branch_name  ?? ''}}</li>
                 </ul>
             </div>
         </div>
@@ -23,15 +22,15 @@
 
     <!-- aboutblock1 section -->
     <section class="w3l-homeblock1 py-5" id="about">
-        <div class="container pt-4 pb-sm-4">
+
+        <!-- <div class="container pt-4 pb-sm-4">
                 <h4 class="inner-text-title font-weight-bold pt-sm-5 pt-4">{{ $BranchDetails[0]->address ?? ''}}</h4>
 
                 <ul class="breadcrumbs-custom-path">
                 
                     <li class="active"><i class="fas fa-angle-right mx-2"></i>{{ $BranchDetails[0]->Phone_no  ?? ''}}</li>
                 </ul>
-            </div>
-
+            </div> -->
         <div class="container py-md-5 py-4">
             <div class="row align-items-center">
                 <div class="col-lg-12 pe-xl-5">
@@ -39,32 +38,32 @@
 
 
 
-                      @if($BranchDetails[0]->image)
-                          <img class="img-fluid" width="100%" src="{{url('uploads/Branchimg/').'/'.$BranchDetails[0]->image}}">
+                    @if($BranchDetails[0]->image)
+                    <img class="img-fluid" src="{{url('uploads/Branchimg/').'/'.$BranchDetails[0]->image}}">
 
-                         @else
-                          
-                          <img class="img-fluid" width="100%" src="{{ url('uploads/Branchimg/logo.png') }}">
+                    @else
 
-                   
-                        @endif
+                    <img class="img-fluid" src="{{ url('uploads/Branchimg/logo.png') }}">
+
+
+                    @endif
 
                     @endisset
 
+                    <div class="container pt-2 ">
+                        <h4 class=" font-weight-bold ">{{$BranchDetails[0]->address ?? ''}}</h4>
 
-                    <h3 class="title-style mb-3">Welcome to <span>{{ $BranchDetails[0]->branch_name  ?? ''}}</span></h3>
-                    <p> {!! $BranchDetails[0]->description ?? '' !!} </p>
-                    <div class="mt-4">
-                        <!-- <ul class="service-list">
-                            <li class="service-link"><a href="#url"><i class="fas fa-check-circle"></i>Exceptional
-                                    Service</a></li>
-                            <li class="service-link"><a href="#url"><i class="fas fa-check-circle"></i>Soft & Gentle</a>
-                            </li>
-                        </ul>  -->
+                        <h4 class="font-weight-bold">{{$BranchDetails[0]->Phone_no  ?? ''}}</h4>
+
+                      
                     </div>
+                    <div class="container pt-2 ">
+                    <p> {!! @$BranchDetails[0]->description ?? '' !!} </p>
+                    </div>
+                    
 
                 </div>
-               
+
             </div>
         </div>
     </section>

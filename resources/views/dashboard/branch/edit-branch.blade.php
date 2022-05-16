@@ -113,7 +113,7 @@
 
 
         <script>
-            let uri = "/storage/uploads/";
+            let uri = "/uploads/thumbnailimg/";
             class MyUploadAdapter {
                 constructor(loader) {
                     // The file loader instance to use during the upload.
@@ -146,7 +146,7 @@
                     // integration to choose the right communication channel. This example uses
                     // a POST request with JSON as a data structure but your configuration
                     // could be different.
-                    xhr.open('POST', "{{ route('uploadbranch',['_token'=>csrf_token() ] ) }}", true);
+                    xhr.open('POST', "{{ route('uploadImgFromCkeditor',['_token'=>csrf_token() ] ) }}", true);
                     xhr.responseType = 'json';
                 }
 

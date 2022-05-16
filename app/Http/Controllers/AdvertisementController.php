@@ -19,16 +19,18 @@ class AdvertisementController extends Controller
         $request->validate([
             'title' => 'required',
             'image'=>'required',
-           
+            'position'=>'required',
+            
 
         ]);
             $advertisement = new Advertisement();
             $advertisement ->title =$request->title;  
+            $advertisement->position =$request->position;
           if($request->hasfile('image'))
            {
                 $image=$request->file('image');
                 $imageName=time().'.'.$image->extension();
-                $image->move(public_path('/uploads/Advertisementimg'), $imageName);
+                $image->move(public_path('/uploads/advertisementimg'), $imageName);
                     
                 $advertisement ->image=$imageName;
         
@@ -58,7 +60,7 @@ class AdvertisementController extends Controller
         $advertisement=Advertisement::find($request->id); 
         $advertisement->title =$request->title;
        
-  
+        $advertisement->position =$request->position;
   
        
         if($request->hasfile('image'))

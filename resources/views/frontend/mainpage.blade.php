@@ -26,13 +26,13 @@
         <div class="container py-md-5 py-4">
             <div class="row align-items-center">
                 <div class="col-lg-12 pe-xl-5">
-                    @isset($ParentContentDetails[0]->Thumbnailimg)
+                    @if($ParentContentDetails[0]->Thumbnailimg)
 
 
 
                     <img class="img-fluid" width="100%" src="{{url('uploads/thumbnailimg/').'/'.$ParentContentDetails[0]->Thumbnailimg }}">
 
-                    @endisset
+                    @endif
 
 
                     <!-- <h3 class="title-style mb-3"><span>{{ $ParentContentDetails[0]->parentpage->title ?? ''}}</span></h3> -->

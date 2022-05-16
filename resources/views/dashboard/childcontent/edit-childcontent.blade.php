@@ -51,7 +51,12 @@
                     </div>
                     <div class="col-sm-10">
 
+
+
+                        @if($childcontent->Thumbnailimg)
                         <img src="../uploads/childcontentimg/{{ $childcontent->Thumbnailimg }}" height="100">
+                        @endif
+                        
                         
 
                         <input style="margin-top: 10px;" type="file" onclick="previewFile(this)" name="thumbnailimg" placeholder="image">
@@ -102,7 +107,7 @@
 
 
         <script>
-            let uri = "/storage/uploads/";
+            let uri = "/uploads/thumbnailimg/";
             class MyUploadAdapter {
                 constructor(loader) {
                     // The file loader instance to use during the upload.
@@ -135,7 +140,7 @@
                     // integration to choose the right communication channel. This example uses
                     // a POST request with JSON as a data structure but your configuration
                     // could be different.
-                    xhr.open('POST', "{{ route('upload',['_token'=>csrf_token() ] ) }}", true);
+                    xhr.open('POST', "{{ route('uploadImgFromCkeditor',['_token'=>csrf_token() ] ) }}", true);
                     xhr.responseType = 'json';
                 }
 

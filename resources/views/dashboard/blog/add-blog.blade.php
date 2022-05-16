@@ -5,76 +5,73 @@
     <div class="grid-form1">
 
 
-                <a href="{{ url('/all-blog') }}" class="btn btn-primary float-end"> View All blog </a>
+        <a href="{{ url('/all-blog') }}" class="btn btn-primary float-end"> View All blog </a>
 
-                @if(Session::has('post_added'))
-                <p class="alert alert-success"> {{ Session::get('post_added') }} </p> 
-                @endif
-            <form class="form-horizontal" action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data">
-                 @csrf
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-sm-2 text-right">
-                                <label for="Post name">Post Tile:</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <input type="text" name="title" placeholder="Enter Post Title">
-                            </div>
-                        </div>
+        @if(Session::has('post_added'))
+        <p class="alert alert-success"> {{ Session::get('post_added') }} </p>
+        @endif
+        <form class="form-horizontal" action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2 text-right">
+                        <label for="Post name">Post Tile:</label>
                     </div>
-                   
-                    
-                    
-                    <div class="form-group">
+                    <div class="col-sm-10">
+                        <input type="text" name="title" placeholder="Enter Post Title">
+                    </div>
+                </div>
+            </div>
 
 
-                            <div class="row">
-                                <div class="col-sm-2 text-right">
-                                    <label for="image">Thumnail Image:</label>
-                                </div>
-                                <div class="col-sm-10">
-                                    <input type="file" name="image"  placeholder="image" onchange="previewFile(this)">
-                                    <img id="previewImg" src="" alt="image" onerror='this.style.display = "none"'>
 
-                                </div>
-                            </div>
+            <div class="form-group">
+
+
+                <div class="row">
+                    <div class="col-sm-2 text-right">
+                        <label for="image">Thumnail Image:</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <input type="file" name="image" placeholder="image" onchange="previewFile(this)">
+                        <img id="previewImg" src="" alt="image" onerror='this.style.display = "none"'>
 
                     </div>
+                </div>
 
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-sm-2 text-right">
-                                <label for="for description">Description: </label>
-                            </div>
-                            <div class="col-sm-10">
+            </div>
 
-                                <textarea id="editor" name="text" class="col-sm-2 control-label hor-form" placeholder="Write here Description"></textarea>
-                            </div>
-                        </div>
-
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2 text-right">
+                        <label for="for description">Description: </label>
                     </div>
+                    <div class="col-sm-10">
 
-                
-
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-sm-2 text-right"></div>
-                            <div class="col-sm-10">
-                                <button type="submit" class="btn btn-default">Submit</button>
-                            </div>
-                        </div>
-
+                        <textarea id="editor" name="text" class="col-sm-2 control-label hor-form" placeholder="Write here Description"></textarea>
                     </div>
-            </form>
+                </div>
 
-        </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2 text-right"></div>
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
     <div>
         <script src="{{ asset('ckeditor/ckeditor.js')}}"> </script>
-
-
-
         <script>
-            let uri = "/storage/uploads/";
+            let uri = "/uploads/thumbnailimg/";
             class MyUploadAdapter {
                 constructor(loader) {
                     // The file loader instance to use during the upload.
@@ -107,7 +104,7 @@
                     // integration to choose the right communication channel. This example uses
                     // a POST request with JSON as a data structure but your configuration
                     // could be different.
-                    xhr.open('POST', "{{ route('upload',['_token'=>csrf_token() ] ) }}", true);
+                    xhr.open('POST', "{{ route('uploadImgFromCkeditor',['_token'=>csrf_token() ] ) }}", true);
                     xhr.responseType = 'json';
                 }
 

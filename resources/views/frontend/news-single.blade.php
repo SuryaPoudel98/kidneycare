@@ -26,13 +26,13 @@
         <div class="container py-md-5 py-4">
             <div class="row align-items-center">
                 <div class="col-lg-12 pe-xl-5">
-                    @isset($NewsContentDetails[0]->image)
+                    @if($NewsContentDetails[0]->image)
 
 
 
                     <img class="img-fluid" width="100%" src="{{url('uploads/Postimg/').'/'.$NewsContentDetails[0]->image }}">
 
-                    @endisset
+                    @endif
 
 
                     <h3 class="title-style mb-3">Welcome to <span>{{ $NewsContentDetails[0]->title ?? ''}}</span></h3>

@@ -17,6 +17,11 @@ $selectTeams = $sc->SelectTeam();
 
 $selectBranches = $sc->selectindexBranch();
 
+$advertismentFirst = $sc->selectAdvertisement(1);
+$advertismentSecond = $sc->selectAdvertisement(2);
+$advertismentThird = $sc->selectAdvertisement(3);
+$advertismentFour = $sc->selectAdvertisement(4);
+$aboutKidneyPara = $sc->selectParagraphOfPageDetailsFromTable(2);
 ?>
 
 @include('frontend.layouts.title')
@@ -33,10 +38,12 @@ $selectBranches = $sc->selectindexBranch();
 
             <div class="swiper-wrapper">
 
-                <div class="swiper-slide"><img src="{{asset('frontend/images/1.jpg') }}"></div>
 
-                <div class="swiper-slide"><img src="{{asset('frontend/images/2.jpg') }}"></div>
-                <div class="swiper-slide"><img src="{{asset('frontend/images/3.jpg') }} "></div>
+
+                @foreach ($sliders as $slider)
+                <div class="swiper-slide"> <img src="uploads/slider/{{$slider->image}}"></div>
+                @endforeach
+
 
 
 
@@ -64,41 +71,41 @@ $selectBranches = $sc->selectindexBranch();
                         <img src="{{ asset('frontend/assets/images/about.jpg') }}" alt="" class="img-fluid radius-image">
                     </div>
                     <div class="imginfo__box">
-                        <h6 class="imginfo__title">Get a Appointment Today!</h6>
-                        <p>We have started online consultation for <br> our patient through eHospital platfrom. </p>
-                        <a href="tel:http://+977 9851234477"><i class="fas fa-phone-alt"></i> +977 9851234477</a>
+                        <h6 class="imginfo__title">Please visit us!</h6>
+                        <p>मृगौला जचाऔं, मृगौला बचाऔं</p>
+                        <p>Check Your Kidney, Save Your Kidney</p>
+                        <a href="tel:http://+977 9851234477"><i class="fas fa-phone-alt"></i> +977 9851334636</a>
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-6 offset-xl-1 mt-lg-0 mt-5 pt-lg-0 pt-5">
-                    <h3 class="title-style mb-md-5 mb-4">Welcome <span>To </span> kidney<span> Care</span>
+                    <h3 class="title-style mb-md-5 mb-4">Welcome !!</span>
                     </h3>
-                    <p class="sub-para">"Our Patients are our Patients, we offer quality Kidney services with a team of
-                        specialists. More details about our services below".</p>
-                    <p class="mt-4 pt-sm-2">Whether you’re newly diagnosed or a long term kidney patient we have lots of information
-                        on the many aspects of kidney health - including dialysis, kidney function, and transplants.</p>
-                    <p class="mt-4 pt-sm-2">Find out about the different types of kidney conditions, and the treatments
-                        that are available to help you have a decent lifestyle</p>
+
+                    {!!substr(@$aboutKidneyPara[0]->text,0,500)!!}
+                    <a href="{{ url('pages/').'/2'}}" class="btn btn-style mt-5">View More</a>
                 </div>
             </div>
         </div>
     </section>
     <!-- //home block 1 -->
 
-
+    @if(@$advertismentFirst[0]->image)
     <div class="service-section py-5" id="Services">
         <div class="container pt-lg-5 pb-lg-5 pb-4 text-center">
 
-            <img src="https://www.onlinekhabar.com/wp-content/uploads/2022/04/900x100.gif"/>
+            <img class="img-fluid" src="uploads/advertisementimg/{{@$advertismentFirst[0]->image}}" />
         </div>
 
     </div>
-
-
+    @endif
+<?php $i=0;?>
     <section class="about-section text-center pt-lg-5 pb-5" id="center">
         <div class="container pt-lg-5 pb-lg-5 pb-4">
             <h3 class="title-style text-center mb-5">Our <span>Center</span></h3>
             <div class="row justify-content-center">
                 @foreach ( $selectBranches as $selectBranch)
+
+                <?php $i++; ?>
                 <div class="col-lg-4 col-md-6">
                     <div class="about-single p-3">
                         <div class="about-icon mb-4">
@@ -120,11 +127,26 @@ $selectBranches = $sc->selectindexBranch();
                 @endforeach
 
             </div>
+
+            <?php if($i>3)
+            {?>
+           
             <a href="{{ url('branchlisting') }}" class="btn btn-style mt-5">View More</a>
+            
+            <?php }?>
         </div>
     </section>
 
+    @if(@$advertismentSecond[0]->image)
 
+    <div class="service-section py-5" id="Services">
+        <div class="container pt-lg-5 pb-lg-5 pb-4 text-center">
+
+            <img class="img-fluid" src="uploads/advertisementimg/{{@$advertismentSecond[0]->image}}" />
+        </div>
+
+    </div>
+    @endif
     <!-- home block 2 -->
 
     <!-- //home block 2 -->
@@ -137,13 +159,14 @@ $selectBranches = $sc->selectindexBranch();
                 <div class="col-lg-3 col-md-6 item">
                     <div class="card">
                         <div class="card-header p-0 position-relative border-0">
-                            <a href="{{ url('pages/6') }}">
-                                <img class="d-block img-responsive" src="{{ asset('frontend/assets/images/opd.jpg') }} " height="250" alt="card-image">
+                            <a href="{{ url('pages/10') }}">
+                            <img class="d-block img-responsive" src="{{ asset('frontend/assets/images/pro.jpg') }}" height="250" alt="card-image">
+                      
                             </a>
                         </div>
                         <div class="card-body service-details">
-                            <a href="{{ url('pages/6') }}">
-                                <h4 class="service-heading">General Checkup</h4>
+                            <a href="{{ url('pages/10') }}">
+                                <h4 class="service-heading">Kidney Screening</h4>
                             </a>
                             <!-- <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque laudan.</p> -->
                         </div>
@@ -152,13 +175,13 @@ $selectBranches = $sc->selectindexBranch();
                 <div class="col-lg-3 col-md-6 mt-md-0 mt-4 pt-md-0 pt-2">
                     <div class="card">
                         <div class="card-header p-0 position-relative border-0">
-                            <a href="{{ url('pages/8') }}">
+                            <a href="{{ url('pages/11') }}">
                                 <img class="d-block img-responsive" src="{{ asset('frontend/assets/images/dialysis.jpg') }} " height="250" alt="card-image">
                             </a>
                         </div>
                         <div class="card-body service-details">
-                            <a href="{{ url('pages/8') }}">
-                                <h4 class="service-heading">Dialysis</h4>
+                            <a href="{{ url('pages/11') }}">
+                                <h4 class="service-heading">Kidney Health Camp</h4>
                             </a>
                             <!-- <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque laudan.</p> -->
                         </div>
@@ -167,13 +190,13 @@ $selectBranches = $sc->selectindexBranch();
                 <div class="col-lg-3 col-md-6 mt-lg-0 mt-4 pt-lg-0 pt-2">
                     <div class="card">
                         <div class="card-header p-0 position-relative border-0">
-                            <a href="{{ url('pages/5') }}">
-                                <img class="d-block img-responsive" src="{{ asset('frontend/assets/images/pro.jpg') }}" height="250" alt="card-image">
+                            <a href="{{ url('pages/12') }}">
+                            <img class="d-block img-responsive" src="{{ asset('frontend/assets/images/opd.jpg') }} " height="250" alt="card-image">
                             </a>
                         </div>
                         <div class="card-body service-details">
-                            <a href="{{ url('pages/5') }}">
-                                <h4 class="service-heading">Kidney Screening</h4>
+                            <a href="{{ url('pages/12') }}">
+                                <h4 class="service-heading">General Checkup</h4>
                             </a>
                             <!-- <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque laudan.</p> -->
                         </div>
@@ -182,13 +205,13 @@ $selectBranches = $sc->selectindexBranch();
                 <div class="col-lg-3 col-md-6 mt-lg-0 mt-4 pt-lg-0 pt-2">
                     <div class="card">
                         <div class="card-header p-0 position-relative border-0">
-                            <a href="{{ url('pages/7') }}">
+                            <a href="{{ url('pages/13') }}">
                                 <img class="d-block img-responsive" src="{{ asset('frontend/assets/images/healthcamp.jpg') }}" height="250" alt="card-image">
                             </a>
                         </div>
                         <div class="card-body service-details">
-                            <a href="{{ url('pages/7') }}">
-                                <h4 class="service-heading">Kidney Health Camp</h4>
+                            <a href="{{ url('pages/13') }}">
+                                <h4 class="service-heading">Online Consultation</h4>
                             </a>
                             <!-- <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque laudan.</p> -->
                         </div>
@@ -201,7 +224,16 @@ $selectBranches = $sc->selectindexBranch();
     <!-- //home block 3 with slider -->
 
     <!-- stats section -->
+    @if(@$advertismentThird[0]->image)
 
+    <div class="service-section py-5" id="Services">
+        <div class="container pt-lg-5 pb-lg-5 pb-4 text-center">
+
+            <img class="img-fluid" src="uploads/advertisementimg/{{@$advertismentThird[0]->image}}" />
+        </div>
+
+    </div>
+    @endif
     <!-- //stats section -->
 
     <!-- team section -->
@@ -244,7 +276,16 @@ $selectBranches = $sc->selectindexBranch();
     <!-- //team setion -->
 
     <!-- blog section -->
+    @if(@$advertismentFour[0]->image)
 
+    <div class="service-section py-5" id="Services">
+        <div class="container pt-lg-5 pb-lg-5 pb-4 text-center">
+
+            <img class="img-fluid" src="uploads/advertisementimg/{{@$advertismentFour[0]->image}}" />
+        </div>
+
+    </div>
+    @endif
 
     @if(@$newsEvent[1]->title)
 
@@ -303,104 +344,7 @@ $selectBranches = $sc->selectindexBranch();
 
 
 
-    <!-- <section class="w3l-contact-11 py-5" id="contact">
-        <div class="container py-md-5 py-4">
-            <h3 class="title-style text-center mb-5"><span>eGFR </span> Calculator</h3>
-
-
-
-
-            <div class="form-inner-cont mx-auto" style="max-width:800px">
-                <form action="" method="post" class="signin-form">
-                    <div class="row align-form-map">
-                        <div class="col-sm-3  mt-2 form-input">
-
-                            <b style="text-align: right;">Serum Creatinine:</b>
-                        </div>
-                        <div class="col-sm-3 form-input">
-                            <input type="email" name="w3lSender" id="w3lSender" placeholder="" required="" />
-                        </div>
-                        <div class="col-sm-3 mt-2 form-input">
-
-                            <b>mg/dl</b>
-                        </div>
-
-
-                    </div>
-                    <div class="row align-form-map">
-                        <div class="col-sm-3  mt-2 form-input">
-
-                            <b style="text-align: right;">Serum Cystatin C:</b>
-                        </div>
-                        <div class="col-sm-3 form-input">
-                            <input type="email" name="w3lSender" id="w3lSender" placeholder="" required="" />
-                        </div>
-                        <div class="col-sm-3 mt-2 form-input">
-
-                            <b>mg/l</b>
-                        </div>
-
-
-                    </div>
-                    <div class="row align-form-map">
-                        <div class="col-sm-3  mt-2 form-input">
-
-                            <b style="text-align: right;">Age:</b>
-                        </div>
-                        <div class="col-sm-3 form-input">
-                            <input type="email" name="w3lSender" id="w3lSender" placeholder="" required="" />
-                        </div>
-                        <div class="col-sm-3 mt-2 form-input">
-
-                            <b>years</b>
-                        </div>
-
-
-                    </div>
-                    <div class="row align-form-map">
-                        <div class="col-sm-3  mt-2 form-input">
-
-                            <b style="text-align: right;">Gender:</b>
-                        </div>
-                        <div class="col-sm-3 form-input ">
-                            <select class="form-select">
-                                <option selected>Select</option>
-                                <option value="1">Male</option>
-                                <option value="2">Female</option>
-                            </select>
-                        </div>
-                      
-
-                    </div>
-
-                    <div class="submit text-left mt-3">
-                        <button type="submit" class="btn btn-style"> Calculate </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section> -->
-
-
-    <!-- call section -->
-    <!-- <section class="w3l-call-to-action-6">
-        <div class="container py-md-5 py-sm-4 py-5">
-            <div class="d-sm-flex align-items-center justify-content-between">
-                <div class="left-content-call">
-                    <h3 class="title-big">Visit Now!</h3>
-                    <p class="text-white mt-1">Begin the change today</p>
-                </div>
-                <div class="right-content-call mt-sm-0 mt-4">
-                    <ul class="buttons">
-                        <li class="phone-sec me-lg-4"><i class="fas fa-phone-volume"></i>
-                            <a class="call-style-w3" href="tel:+1(23) 456 789 0000">+1(23) 456 789 0000</a>
-                        </li>
-                        <li><a href="appointment.html" class="btn btn-style btn-style-2 mt-lg-0 mt-3">Book Now</a> </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section> -->
+   
     @include('frontend.layouts.footer')
 
 </body>

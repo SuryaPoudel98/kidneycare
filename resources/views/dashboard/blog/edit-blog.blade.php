@@ -19,18 +19,18 @@
             <div class="form-group">
 
                 <div class="row">
-                                <div class="col-sm-2 text-right">
-                                    <label for="Branch name">Post Title</label>
-                                </div>
-                                <div class="col-sm-10">
-                                    <input type="text" name="title" placeholder="Enter Branch Name" value="{{ $post->title }}">
-                                </div>
+                    <div class="col-sm-2 text-right">
+                        <label for="Branch name">Post Title</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <input type="text" name="title" placeholder="Enter Branch Name" value="{{ $post->title }}">
+                    </div>
                 </div>
 
 
 
             </div>
-       
+
             <div class="form-group">
 
                 <div class="row">
@@ -40,7 +40,7 @@
                     <div class="col-sm-10">
 
                         <img src="../uploads/Postimg/{{ $post->image }}" height="100">
-                        
+
 
                         <input style="margin-top: 10px;" type="file" onclick="previewFile(this)" name="image" placeholder="image">
                         <img id="previewImg" src="" alt="image" onerror='this.style.display = "none"'>
@@ -90,7 +90,7 @@
 
 
         <script>
-            let uri = "/storage/uploads/";
+            let uri = "/uploads/thumbnailimg/";
             class MyUploadAdapter {
                 constructor(loader) {
                     // The file loader instance to use during the upload.
@@ -123,7 +123,7 @@
                     // integration to choose the right communication channel. This example uses
                     // a POST request with JSON as a data structure but your configuration
                     // could be different.
-                    xhr.open('POST', "{{ route('uploadpost',['_token'=>csrf_token() ] ) }}", true);
+                    xhr.open('POST', "{{ route('uploadImgFromCkeditor',['_token'=>csrf_token() ] ) }}", true);
                     xhr.responseType = 'json';
                 }
 

@@ -5,8 +5,8 @@
 <title>Admin panel </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Minimal Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<link rel="icon" href="{{ asset('frontend/assets/images/icon.png') }}">
+<meta name="keywords" content="Kidney Care Pvt.Ltd., Tuki soft" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="{{ asset('dashboardpublic/css/bootstrap.min.css') }}" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
@@ -114,18 +114,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <ul class="nav" id="side-menu">
                    
                         <li>
-                            <a href="{{ route('parentpage')}}" class=" hvr-bounce-to-right"><i class="fa fa-indent nav_icon"></i> <span class="nav-label">Parent Page</span></span></a>
+                            <a href="/all-parentpage" class=" hvr-bounce-to-right"><i class="fa fa-indent nav_icon"></i> <span class="nav-label">Parent Page</span></span></a>
                           
                         </li>
                         <li>
-                            <a href="/add-childpage" class=" hvr-bounce-to-right"><i class="fa fa-inbox nav_icon"></i> <span class="nav-label">Child Page</span> </a>
+                            <a href="/all-childpage" class=" hvr-bounce-to-right"><i class="fa fa-inbox nav_icon"></i> <span class="nav-label">Child Page</span> </a>
                         </li>
                         
                         <li>
-                            <a href="{{ route('parentcontent')}}" class=" hvr-bounce-to-right"><i class="fa fa-picture-o nav_icon"></i> <span class="nav-label">Parent Content Page</span> </a>
+                            <a href="/all-parentcontent" class=" hvr-bounce-to-right"><i class="fa fa-picture-o nav_icon"></i> <span class="nav-label">Parent Content </span> </a>
                         </li>
 						<li>
-                            <a href="{{ route('childcontent')}}" class=" hvr-bounce-to-right"><i class="fa fa-picture-o nav_icon"></i> <span class="nav-label">Child Content Page</span> </a>
+                            <a href="/all-childcontent" class=" hvr-bounce-to-right"><i class="fa fa-picture-o nav_icon"></i> <span class="nav-label">Child Content </span> </a>
                         </li>
                         <li>
                             <a href="/Sliderimage" class=" hvr-bounce-to-right"><i class="fa fa-desktop nav_icon"></i> <span class="nav-label">Slider Images </span></a>
@@ -136,27 +136,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                        
                         </li>
                         <li>
-                            <a href="{{ route('branch')}}" class=" hvr-bounce-to-right"><i class="fa fa-desktop nav_icon"></i> <span class="nav-label"> Branch </span></a>
+                            <a href="/all-branch" class=" hvr-bounce-to-right"><i class="fa fa-desktop nav_icon"></i> <span class="nav-label"> Branch </span></a>
                        
                         </li>
                         <li>
-                            <a href="{{ route('team')}}" class=" hvr-bounce-to-right"><i class="fa fa-desktop nav_icon"></i> <span class="nav-label"> Our Team </span></a>
+                            <a href="/all-team" class=" hvr-bounce-to-right"><i class="fa fa-desktop nav_icon"></i> <span class="nav-label"> Our Team </span></a>
                        
                         </li>
                         <li>
-                            <a href="{{ route('post')}}" class=" hvr-bounce-to-right"><i class="fa fa-desktop nav_icon"></i> <span class="nav-label"> News And Events </span></a>
+                            <a href="/all-post" class=" hvr-bounce-to-right"><i class="fa fa-desktop nav_icon"></i> <span class="nav-label"> News And Events </span></a>
                        
                         </li>
                         <li>
-                            <a href="{{ route('blog')}}" class=" hvr-bounce-to-right"><i class="fa fa-desktop nav_icon"></i> <span class="nav-label"> Blog </span></a>
+                            <a href="/all-blog" class=" hvr-bounce-to-right"><i class="fa fa-desktop nav_icon"></i> <span class="nav-label"> Blog </span></a>
                        
                         </li>
                         <li>
-                            <a href="{{ route('patient')}}" class=" hvr-bounce-to-right"><i class="fa fa-desktop nav_icon"></i> <span class="nav-label"> Patients </span></a>
+                            <a href="/all-patient" class=" hvr-bounce-to-right"><i class="fa fa-desktop nav_icon"></i> <span class="nav-label"> Patients </span></a>
                        
                         </li>
                         <li>
-                            <a href="{{ route('advertisement')}}" class=" hvr-bounce-to-right"><i class="fa fa-desktop nav_icon"></i> <span class="nav-label"> Advertisement </span></a>
+                            <a href="/add-advertisement" class=" hvr-bounce-to-right"><i class="fa fa-desktop nav_icon"></i> <span class="nav-label"> Advertisement </span></a>
                        
                         </li>
                         <li>

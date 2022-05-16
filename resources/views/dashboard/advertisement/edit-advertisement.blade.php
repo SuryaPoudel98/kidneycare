@@ -23,7 +23,7 @@
         @endif
         <form class="form-horizontal" action="{{ route('advertisement.update') }}" method="POST" enctype="multipart/form-data">
             @csrf
-         
+
             <input type="hidden" name="id" value="{{ $advertisement->id }}" />
 
 
@@ -33,8 +33,8 @@
                         <label for="for description">Advertisement Caption:</label>
                     </div>
                     <div class="col-sm-10">
-                    <input type="text" class="col-xs-4" id="name" name="title" value="{{ $advertisement->title }}" placeholder="Enter page title">
-             
+                        <input type="text" class="col-xs-4" id="name" name="title" value="{{ $advertisement->title }}" placeholder="Enter page title">
+
                     </div>
                 </div>
                 <div class="row" style="margin-top: 10px;">
@@ -42,12 +42,19 @@
                         <label for="exampleInputFile">Upload Image:</label>
                     </div>
                     <div class="col-sm-10">
-                    <img src="../../uploads/Advertisementimg/{{$advertisement->image}}" height="100px">
-                    <input style="margin-top: 10px;" type="file" name="image" placeholder="image" onchange="previewFile(this)" onclick="alert('image file must be height:200px and width:1000px')">
-             
+                        <img src="../../uploads/advertisementimg/{{$advertisement->image}}" height="100px">
+                        <input style="margin-top: 10px;" type="file" name="image" placeholder="image" onchange="previewFile(this)" onclick="alert('image file must be height:200px and width:1000px')">
+
                     </div>
                 </div>
-
+                <div class="row">
+                    <div class="col-sm-2 text-right">
+                        <label for="for description">Postion </label>
+                    </div>
+                    <div class="col-sm-10">
+                        <input type="text" class="col-xs-4" id="position" name="position" placeholder="Enter Position" value="{{ $advertisement->position }}">
+                    </div>
+                </div>
             </div>
 
 
@@ -59,10 +66,10 @@
                 <div class="row">
                     <div class="col-sm-2 text-right"></div>
                     <div class="col-sm-10">
-                    <button type="submit" class="btn btn-default">Update</button>
+                        <button type="submit" class="btn btn-default">Update</button>
+                    </div>
                 </div>
-                </div>
-                
+
             </div>
         </form>
     </div>

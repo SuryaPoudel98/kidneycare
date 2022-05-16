@@ -27,7 +27,7 @@ class FrontendController extends Controller
 
     
       $sliders=SliderImage::orderBy('created_at','desc')->get();
-      return view('frontend1.index',compact('sliders') );
+      return view('frontend.index',compact('sliders') );
     }
 
    public function selectPageDetailsFromTable($id)
@@ -45,6 +45,10 @@ class FrontendController extends Controller
 
       return view('frontend.pages',compact('childContentDetails') );
      }
+
+
+  
+
 
      public function selectHeadingDetailsFromTable($id)
      {

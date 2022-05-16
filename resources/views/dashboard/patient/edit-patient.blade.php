@@ -97,9 +97,7 @@
     </div>
     <div>
 
-        <script src="{{ asset('ckeditor/ckeditor.js')}}"> </script>
-
-
+        
 
 
 

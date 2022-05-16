@@ -20,10 +20,12 @@ use App\Http\Controllers\Mailcontroller;
 
 
 //for the fortend part
-Route::get('/', function () {
+// Route::get('/', function () {
 
-    return view('frontend.index');
-});
+//     return view('frontend.index');
+// });
+
+Route::get('/',[FrontendController::class,'sliderschange']);
 
 //Route::get('/page/{id}',[FrontendController::class,'pagestodisplay']);
 
@@ -126,7 +128,7 @@ Route::get('/delete-parentpage/{id}',[ParentPageController::class,'deleteParentp
  Route::post('/update-parentcontent',[ParentContentController::class,'UpdateParentContent'])->name('parentcontent.update');
  Route::get('/delete-parenentcontent/{id}',[ParentContentController::class,'DeleleParentContent']);
  //ckeditor  
- Route::post('ckeditor/image_upload',[ParentContentController::class,'upload'])->name('upload');
+ Route::post('/uploadCkeditorImg',[ParentContentController::class,'upload'])->name('uploadImgFromCkeditor');
 
  // child Content page
  Route::get('/add-childcontent',[ChildContentController::class,'AddChildContent'])->name('childcontent');
@@ -136,7 +138,7 @@ Route::get('/delete-parentpage/{id}',[ParentPageController::class,'deleteParentp
  Route::post('/update-childcontent',[ChildContentController::class,'UpdateChildContent'])->name('childcontent.update');
  Route::get('/delete-childcontent/{id}',[ChildContentController::class,'DeleleChildContent']);
  //ckditor
- Route::post('editor/image_upload',[ChildContentController::class,'upload'])->name('upload');
+ //Route::post('editor/image_upload',[ChildContentController::class,'upload'])->name('upload');
  //ckditor upadate
 
  
@@ -157,7 +159,7 @@ Route::get('/delete-parentpage/{id}',[ParentPageController::class,'deleteParentp
 // ckeditor 
  //uploadbranch
 
- Route::post('ckeditor/image_upload',[BranchController::class,'upload'])->name('upload');
+ //Route::post('ckeditor/branch',[BranchController::class,'upload'])->name('uploadBranch');
 
  //Our Team
  Route::get('/add-team',[TeamController::class,'Addteam'])->name('team');
@@ -177,7 +179,7 @@ Route::get('/delete-parentpage/{id}',[ParentPageController::class,'deleteParentp
 
  //uploadpost
 
- Route::post('ckeditor/image_upload',[PostController::class,'upload'])->name('upload');
+ //Route::post('ckeditor/post',[PostController::class,'upload'])->name('uploadPost');
 
 
  //Blog post 
@@ -189,7 +191,7 @@ Route::get('/delete-parentpage/{id}',[ParentPageController::class,'deleteParentp
  Route::get('/delete-blog/{id}',[BlogController::class,'DeleteBlog']);
 
  //upload
- Route::post('ckeditor/image_upload',[PostController::class,'upload'])->name('upload');
+ //Route::post('ckeditor/image_upload',[PostController::class,'upload'])->name('upload');
 
 //for Patients
 Route::get('/add-patient',[PatientController::class,'Addpatient'])->name('patient');

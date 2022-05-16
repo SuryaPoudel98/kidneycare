@@ -8,6 +8,7 @@ use App\Models\ChildPage;
 use App\Models\Testimonial;
 use App\Models\Branch;
 use App\Models\Team;
+use App\Models\Advertisement;
 
 
 
@@ -18,12 +19,37 @@ class SelectClass extends Model
     public function selectReportUsingPID($PID)
     {
 
-        $report = Report::select('blood_sugar','report_date')->where('patient_id',$PID)->get();
+        $report = Report::select('blood_sugar', 'report_date')->where('patient_id', $PID)->get();
 
         //        dd($mainheading);
         return $report;
     }
 
+
+
+    public function selectAdvertisement($position)
+    {
+
+
+        $advertisements = Advertisement::select('image', 'title')->where('position', $position)->get();
+
+        return $advertisements;
+    }
+
+
+    public function selectParagraphOfPageDetailsFromTable($id)
+    {
+        $childContentDetails = ChildContent::select( 'text',)
+            ->with(['Childpage' => function ($q) {
+                $q->select(['id', 'child_title']);
+            }])
+            ->where('childpage_id', $id)
+            ->get();
+
+
+
+        return $childContentDetails;
+    }
 
 
 
@@ -56,10 +82,10 @@ class SelectClass extends Model
 
     public function selectindexBranch()
     {
-        $branches=Branch::orderBy('id', 'DESC')->take(3)->get();
+        $branches = Branch::orderBy('id', 'DESC')->take(3)->get();
         return  $branches;
     }
-    
+
     public function selectNews()
     {
         $selectNews = Post::orderBy('id', 'DESC')->take(2)->get();

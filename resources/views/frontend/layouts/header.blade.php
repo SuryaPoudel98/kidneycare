@@ -4,9 +4,9 @@
 
     $sc = new SelectClass();
 
-    $subheadings = $sc->selectSubHeading("About");
+    $subheadings = $sc->selectSubHeading("About Us");
 
-    $subheadingsServices = $sc->selectSubHeading("Services");
+    $subheadingsServices = $sc->selectSubHeading("OUR SERVICES");
 
     $headingskidneyhealths = $sc->selectSubHeading("Kidney Health");
 
@@ -19,9 +19,120 @@
 
     <body>
         <!-- header -->
+
+
+
         <header id="site-header" class="fixed-top nav-fixed">
             <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light">
+
+
+                <nav>
+                    <div class="navbar">
+                        <i class='bx bx-menu'></i>
+                        <div class="logo"><a class="navbar-brand" href="/">
+                                <img src="{{ asset('frontend/assets/images/logo.svg') }}" height="65" />
+                            </a></div>
+                        <div class="nav-links">
+                            <div class="sidebar-logo">
+                                <span class="logo-name">Kidney Care</span>
+                                <i class='bx bx-x'></i>
+                            </div>
+                            <ul class="links">
+                                <li><a href="#">About</a></li>
+                                <li>
+                                    <a href="#">Kidney Health</a>
+                                    <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+                                    <ul class="htmlCss-sub-menu sub-menu">
+                                        <li class="more">
+                                            <span><a href="#">Conditions</a>
+                                                <!-- <i class='bx bxs-chevron-right arrow more-arrow'></i> -->
+                                            </span>
+                                            <ul class="more-sub-menu sub-menu">
+                                                <li><a href="#">Neumorphism</a></li>
+                                                <li><a href="#">Pre-loader</a></li>
+                                                <li><a href="#">Glassmorphism</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="more">
+                                            <span><a href="#">Treatments</a>
+                                                <!-- <i class='bx bxs-chevron-right arrow more-arrow'></i> -->
+                                            </span>
+                                            <ul class="more-sub-menu sub-menu">
+                                                <li><a href="#">Neumorphism</a></li>
+                                                <li><a href="#">Pre-loader</a></li>
+                                                <li><a href="#">Glassmorphism</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Services</a>
+                                    <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+                                    <ul class="htmlCss-sub-menu sub-menu">
+                                        <li class="more">
+                                            <span><a href="#">Kidney Screening </a>
+                                                <!-- <i class='bx bxs-chevron-right arrow more-arrow'></i> -->
+                                            </span>
+                                            <ul class="more-sub-menu sub-menu">
+                                                <li><a href="#">Neumorphism</a></li>
+                                                <li><a href="#">Pre-loader</a></li>
+                                                <li><a href="#">Glassmorphism</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="more">
+                                            <span><a href="#">Kidney Health Camp</a>
+                                                <!-- <i class='bx bxs-chevron-right arrow more-arrow'></i> -->
+                                            </span>
+                                            <ul class="more-sub-menu sub-menu">
+                                                <li><a href="#">Neumorphism</a></li>
+                                                <li><a href="#">Pre-loader</a></li>
+                                                <li><a href="#">Glassmorphism</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="more">
+                                            <span><a href="#">General Checkup</a>
+                                                <!-- <i class='bx bxs-chevron-right arrow more-arrow'></i> -->
+                                            </span>
+                                            <ul class="more-sub-menu sub-menu">
+                                                <li><a href="#">Neumorphism</a></li>
+                                                <li><a href="#">Pre-loader</a></li>
+                                                <li><a href="#">Glassmorphism</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="more">
+                                            <span><a href="#">Online Consulation</a>
+                                                <!-- <i class='bx bxs-chevron-right arrow more-arrow'></i> -->
+                                            </span>
+                                            <ul class="more-sub-menu sub-menu">
+                                                <li><a href="#">Neumorphism</a></li>
+                                                <li><a href="#">Pre-loader</a></li>
+                                                <li><a href="#">Glassmorphism</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Blog</a>
+                                   
+                                </li>
+                                <li><a href="#">News & Events</a></li>
+                                <li><a href="#">Donate</a></li>
+                                <li><a href="#">CONTACT US</a></li>
+                                <li><a href="#">My Kidney</a></li>
+                            </ul>
+                        </div>
+                        <!-- <div class="search-box">
+                            <i class='bx bx-search'></i>
+                            <div class="input-box">
+                                <input type="text" placeholder="Search...">
+                            </div>
+                        </div> -->
+                    </div>
+                </nav>
+
+
+
+                <!-- <nav class="navbar navbar-expand-lg navbar-light">
                     <a class="navbar-brand" href="/">
                         <img src="{{ asset('frontend/assets/images/logo.svg') }}" height="65" />
                     </a>
@@ -31,10 +142,7 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarScroll">
                         <ul class="navbar-nav ms-auto me-2 my-2 my-lg-0 navbar-nav-scroll">
-                            <!-- <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="{{ url('')}}">Home</a>
-                            </li> -->
-
+                           
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     About &nbsp;<i class="fas fa-angle-down"> </i>
@@ -65,9 +173,7 @@
 
                                 </ul>
                             </li>
-                            <!-- <li class="nav-item">
-                            <a class="nav-link" href="about.html">Treatement & Support</a>
-                        </li> -->
+                         
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Services &nbsp;<i class="fas fa-angle-down"> </i>
@@ -100,22 +206,9 @@
                         </ul>
 
                     </div>
-                    <!-- toggle switch for light and dark theme -->
-                    <!-- <div class="cont-ser-position">
-                    <nav class="navigation">
-                        <div class="theme-switch-wrapper">
-                            <label class="theme-switch" for="checkbox">
-                                <input type="checkbox" id="checkbox">
-                                <div class="mode-container">
-                                    <i class="gg-sun"></i>
-                                    <i class="gg-moon"></i>
-                                </div>
-                            </label>
-                        </div>
-                    </nav>
-                </div> -->
-                    <!-- //toggle switch for light and dark theme -->
-                </nav>
+                   
+                </nav> -->
             </div>
         </header>
         <!-- //header -->
+        <script src="{{ asset('frontend/assets/js/script.js')}}"></script>

@@ -5,98 +5,98 @@
     <div class="grid-form1">
 
 
-                <a href="{{ url('/all-branch') }}" class="btn btn-primary float-end"> View All Branches </a>
+        <a href="{{ url('/all-branch') }}" class="btn btn-primary float-end"> View All Branches </a>
 
-                @if(Session::has('branch_added'))
-                <p class="alert alert-success"> {{ Session::get('branch_added') }} </p> 
-                @endif
-            <form class="form-horizontal" action="{{ route('branch.store') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-sm-2 text-right">
-                                <label for="Branch name">Branch name:</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <input type="text" name="branch_name" placeholder="Enter Branch Name">
-                            </div>
-                        </div>
+        @if(Session::has('branch_added'))
+        <p class="alert alert-success"> {{ Session::get('branch_added') }} </p>
+        @endif
+        <form class="form-horizontal" action="{{ route('branch.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2 text-right">
+                        <label for="Branch name">Branch name:</label>
                     </div>
-                    <div class="form-group">   
-
-                        <div class="row">
-                            <div class="col-sm-2 text-right">
-                                <label for="for Address"> Address: </label>
-                            </div>
-                            <div class="col-sm-10">
-                                <input type="text" name="address" placeholder="Enter Address Branch">
-                            </div>
-                        </div>
-                    </div>   
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-sm-2 text-right">
-                                <label for="Phone number"> Phone Number: </label>
-                            </div>
-                            <div class="col-sm-10">
-                                <input type="text" name="phone_no" placeholder="Enter phone number">
-                            </div>
-                        </div>
-
-
-
+                    <div class="col-sm-10">
+                        <input type="text" name="branch_name" placeholder="Enter Branch Name">
                     </div>
-                    
-                    <div class="form-group">
+                </div>
+            </div>
+            <div class="form-group">
+
+                <div class="row">
+                    <div class="col-sm-2 text-right">
+                        <label for="for Address"> Address: </label>
+                    </div>
+                    <div class="col-sm-10">
+                        <input type="text" name="address" placeholder="Enter Address Branch">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2 text-right">
+                        <label for="Phone number"> Phone Number: </label>
+                    </div>
+                    <div class="col-sm-10">
+                        <input type="text" name="phone_no" placeholder="Enter phone number">
+                    </div>
+                </div>
 
 
-                            <div class="row">
-                                <div class="col-sm-2 text-right">
-                                    <label for="image">Choose Image:</label>
-                                </div>
-                                <div class="col-sm-10">
-                                    <input type="file" name="image"  placeholder="image" onchange="previewFile(this)">
-                                    <img id="previewImg" src="" alt="image" onerror='this.style.display = "none"'>
 
-                                </div>
-                            </div>
+            </div>
+
+            <div class="form-group">
+
+
+                <div class="row">
+                    <div class="col-sm-2 text-right">
+                        <label for="image">Choose Image:</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <input type="file" name="image" placeholder="image" onchange="previewFile(this)">
+                        <img id="previewImg" src="" alt="image" onerror='this.style.display = "none"'>
 
                     </div>
+                </div>
 
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-sm-2 text-right">
-                                <label for="for description">Description: </label>
-                            </div>
-                            <div class="col-sm-10">
+            </div>
 
-                                <textarea id="editor" name="text" class="col-sm-2 control-label hor-form" placeholder="Write here Description"></textarea>
-                            </div>
-                        </div>
-
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2 text-right">
+                        <label for="for description">Description: </label>
                     </div>
+                    <div class="col-sm-10">
 
-                
-
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-sm-2 text-right"></div>
-                            <div class="col-sm-10">
-                                <button type="submit" class="btn btn-default">Submit</button>
-                            </div>
-                        </div>
-
+                        <textarea id="editor" name="text" class="col-sm-2 control-label hor-form" placeholder="Write here Description"></textarea>
                     </div>
-            </form>
+                </div>
 
-        </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2 text-right"></div>
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
     <div>
         <script src="{{ asset('ckeditor/ckeditor.js')}}"> </script>
 
 
 
         <script>
-            let uri = "/storage/uploads/";
+            let uri = "/uploads/thumbnailimg/";
             class MyUploadAdapter {
                 constructor(loader) {
                     // The file loader instance to use during the upload.
@@ -129,7 +129,7 @@
                     // integration to choose the right communication channel. This example uses
                     // a POST request with JSON as a data structure but your configuration
                     // could be different.
-                    xhr.open('POST', "{{ route('upload',['_token'=>csrf_token() ] ) }}", true);
+                    xhr.open('POST', "{{ route('uploadImgFromCkeditor',['_token'=>csrf_token() ] ) }}", true);
                     xhr.responseType = 'json';
                 }
 

@@ -189,7 +189,7 @@
 
     </script>
     <script src="{{ asset('frontend/assets/js/jquery-3.3.1.min.js') }}"></script>
-   
+
     <!-- //Js scripts -->
 </body>
 
