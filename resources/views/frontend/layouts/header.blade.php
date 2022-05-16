@@ -38,7 +38,17 @@
                                 <i class='bx bx-x'></i>
                             </div>
                             <ul class="links">
-                                <li><a href="#">About</a></li>
+                                <li>
+                                    <a href="#">About</a>
+                                    <i class='bx bxs-chevron-down js-arrow arrow '></i>
+                                    <ul class="js-sub-menu sub-menu">
+                                        @foreach($subheadings as $subheading )
+                                        <li>
+                                            <a  href="{{ url('pages/').'/'.$subheading->id }}">{{ $subheading->child_title }}</a>
+                                        </li>
+                                        @endforeach
+                                    </ul>
+                                </li>
                                 <li>
                                     <a href="#">Kidney Health</a>
                                     <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
@@ -113,11 +123,11 @@
                                 </li>
                                 <li>
                                     <a href="#">Blog</a>
-                                   
+
                                 </li>
                                 <li><a href="#">News & Events</a></li>
                                 <li><a href="#">Donate</a></li>
-                                <li><a href="#">CONTACT US</a></li>
+                                <li><a href="#">Contact</a></li>
                                 <li><a href="#">My Kidney</a></li>
                             </ul>
                         </div>
