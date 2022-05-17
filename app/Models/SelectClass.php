@@ -9,6 +9,8 @@ use App\Models\Testimonial;
 use App\Models\Branch;
 use App\Models\Team;
 use App\Models\Advertisement;
+use App\Models\ChildContent;
+
 
 
 
@@ -109,5 +111,25 @@ class SelectClass extends Model
     {
         $selectBlog = Blog::all();
         return  $selectBlog;
+    }
+
+    public function SelectServices($searchKey)
+    {
+        $selectServices=\DB::select("select child_contents.childpage_id,child_title,Thumbnailimg from child_pages inner join child_contents  on child_contents.childpage_id=child_pages.id inner join parent_pages on parent_pages.id=child_pages.parentpage_id where parent_pages.title='".$searchKey."'");
+
+        return $selectServices;
+        //dd( $selectServices[0]);
+
+        // $data = Users::where('type',1)
+        // ->where(function($query) use ($today) {
+        //     return $query->whereDate('updated_at','!=', $today)
+        //     ->orWhere('updated_at',null);
+        //  })
+        //  ->get();
+
+        //inner join concept 
+        //$dummydata = \DB::select("select dummyseconds.id, item_id,itemName,dummyseconds.units,rate,unitEqualsTo,bonus,quantity from dummyseconds inner join inventorysettings on inventorysettings.id=dummyseconds.item_id where dummyseconds.id='" . $id . "' and inventorysettings.status=0 ");
+          
+
     }
 }

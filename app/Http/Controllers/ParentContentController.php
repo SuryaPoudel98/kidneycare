@@ -105,4 +105,13 @@ class ParentContentController extends Controller
             echo json_encode(['fileName' => $filenametostore]);
         }
     }
+    public function deleteparentcontentimage($id)
+    {
+        $parentcontent = ParentContent::FindorFail($id);
+        $parentcontent->thumbnailimg = "";
+        
+        $parentcontent->update();
+        return back()->with('parentcontent_updated', 'Image remove successfully !');
+           
+    }
 }

@@ -33,13 +33,15 @@
                 </div>
                 <div class="col-sm-10">
                 @if($parentcontent->Thumbnailimg)
-                <img src="../uploads/childcontentimg/{{ $parentcontent->Thumbnailimg }}" height="100">
+                <img src="../uploads/thumbnailimg/{{ $parentcontent->Thumbnailimg }}" height="100">
+                <button> <a href="/deleteparentcontentimage/{{$parentcontent->id }}" > Remove </a> </button>
                
                 @endif
                     <input type="file" style="margin-top: 10px;" name="thumbnailimg" class="form-control" placeholder="Thumbnailimage" onchange="previewFile(this)">
                     <!-- <img class="bi bi-images" id="previewImg" alt="image" value="{{ $parentcontent->thumbnailimg }}"> -->
 
                 </div>
+                
             </div>
 
             <div class="form-group">
@@ -51,6 +53,16 @@
                     {{ $parentcontent->text }}
                     </textarea>
                 </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2 text-right"></div>
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-default">Update</button>
+                    </div>
+                </div>
+
             </div>
 
 

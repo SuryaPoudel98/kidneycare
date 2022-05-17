@@ -94,6 +94,15 @@ class ChildContentController extends Controller
         $childcontent ->delete();       
        return back()->with('childcontent_deleted',' ChildContent is delete successfully');
     }
+    public function deletechildcontentimage($id)
+    { 
+       
+        $childcontent = ChildContent::FindorFail($id);
+        $childcontent->thumbnailimg = "";
+        
+        $childcontent->update();
+        return back()->with('childcontent_updated', 'Image remove successfully !'); 
+    }
 
     
 }

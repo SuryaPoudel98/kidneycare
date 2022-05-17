@@ -129,6 +129,10 @@ Route::get('/delete-parentpage/{id}',[ParentPageController::class,'deleteParentp
  Route::get('/delete-parenentcontent/{id}',[ParentContentController::class,'DeleleParentContent']);
  //ckeditor  
  Route::post('/uploadCkeditorImg',[ParentContentController::class,'upload'])->name('uploadImgFromCkeditor');
+ //image remove
+ Route::get('/deleteparentcontentimage/{id}',[ParentContentController::class,'deleteparentcontentimage']);
+
+
 
  // child Content page
  Route::get('/add-childcontent',[ChildContentController::class,'AddChildContent'])->name('childcontent');
@@ -137,6 +141,11 @@ Route::get('/delete-parentpage/{id}',[ParentPageController::class,'deleteParentp
  Route::get('/edit-childcontent/{id}',[ChildContentController::class,'EditChildContent']);
  Route::post('/update-childcontent',[ChildContentController::class,'UpdateChildContent'])->name('childcontent.update');
  Route::get('/delete-childcontent/{id}',[ChildContentController::class,'DeleleChildContent']);
+ //image remove 
+ Route::get('/deletechildcontentimage/{id}',[ChildContentController::class,'deletechildcontentimage']);
+
+
+
  //ckditor
  //Route::post('editor/image_upload',[ChildContentController::class,'upload'])->name('upload');
  //ckditor upadate
@@ -220,14 +229,6 @@ Route::get('/all-advertisement',[AdvertisementController::class,'advertisements'
 Route::get('/edit-advertisement/{id}',[AdvertisementController::class,'Editadvertisement'])->name('advertisement.edit');
 Route::post('/update-advertisement',[AdvertisementController::class,'Updateadvertisement'])->name('advertisement.update');
 Route::get('/delete-advertisement/{id}',[AdvertisementController::class,'Deleteadvertisement'])->name('advertisement.delete');
-
-
-
-
-
-
-
-
 
 
 

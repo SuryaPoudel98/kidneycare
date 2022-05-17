@@ -1,19 +1,24 @@
     <?php
-
+    
     use App\Models\SelectClass;
-
+    
     $sc = new SelectClass();
-
-    $subheadings = $sc->selectSubHeading("About Us");
-
-    $subheadingsServices = $sc->selectSubHeading("OUR SERVICES");
-
-    $headingskidneyhealths = $sc->selectSubHeading("Kidney Health");
-
-
-
-
+    
+    $subheadings = $sc->selectSubHeading('About Us');
+    
+    $conditionsSubheading = $sc->selectSubHeading('Conditions');
+    
+    $treatmentsSubheading = $sc->selectSubHeading('Treatments');
+    $KidneyScreeningSubheading = $sc->selectSubHeading('Kidney Screening');
+    $KidneyHealthCampSubheading = $sc->selectSubHeading('Kidney Health Camp');
+    $GeneralCheckupSubheading = $sc->selectSubHeading('General Checkup');
+    $OnlineConsulationSubheading = $sc->selectSubHeading('Online Consulation');
+    $subheadingsServices = $sc->selectSubHeading('OUR SERVICES');
+    
+    $headingskidneyhealths = $sc->selectSubHeading('Kidney Health');
+    
     //  dd($headingskidneyhealths);
+    
     ?>
 
 
@@ -42,10 +47,11 @@
                                     <a href="#">About</a>
                                     <i class='bx bxs-chevron-down js-arrow arrow '></i>
                                     <ul class="js-sub-menu sub-menu">
-                                        @foreach($subheadings as $subheading )
-                                        <li>
-                                            <a  href="{{ url('pages/').'/'.$subheading->id }}">{{ $subheading->child_title }}</a>
-                                        </li>
+                                        @foreach ($subheadings as $subheading)
+                                            <li>
+                                                <a
+                                                    href="{{ url('pages/') . '/' . $subheading->id }}">{{ $subheading->child_title }}</a>
+                                            </li>
                                         @endforeach
                                     </ul>
                                 </li>
@@ -58,9 +64,12 @@
                                                 <!-- <i class='bx bxs-chevron-right arrow more-arrow'></i> -->
                                             </span>
                                             <ul class="more-sub-menu sub-menu">
-                                                <li><a href="#">Neumorphism</a></li>
-                                                <li><a href="#">Pre-loader</a></li>
-                                                <li><a href="#">Glassmorphism</a></li>
+                                                @foreach ($conditionsSubheading as $subheading)
+                                                    <li>
+                                                        <a
+                                                            href="{{ url('pages/') . '/' . $subheading->id }}">{{ $subheading->child_title }}</a>
+                                                    </li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                         <li class="more">
@@ -68,9 +77,12 @@
                                                 <!-- <i class='bx bxs-chevron-right arrow more-arrow'></i> -->
                                             </span>
                                             <ul class="more-sub-menu sub-menu">
-                                                <li><a href="#">Neumorphism</a></li>
-                                                <li><a href="#">Pre-loader</a></li>
-                                                <li><a href="#">Glassmorphism</a></li>
+                                                @foreach ($treatmentsSubheading as $subheading)
+                                                    <li>
+                                                        <a
+                                                            href="{{ url('pages/') . '/' . $subheading->id }}">{{ $subheading->child_title }}</a>
+                                                    </li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                     </ul>
@@ -83,10 +95,14 @@
                                             <span><a href="#">Kidney Screening </a>
                                                 <!-- <i class='bx bxs-chevron-right arrow more-arrow'></i> -->
                                             </span>
+
                                             <ul class="more-sub-menu sub-menu">
-                                                <li><a href="#">Neumorphism</a></li>
-                                                <li><a href="#">Pre-loader</a></li>
-                                                <li><a href="#">Glassmorphism</a></li>
+                                                @foreach ($KidneyScreeningSubheading as $subheading)
+                                                    <li>
+                                                        <a
+                                                            href="{{ url('pages/') . '/' . $subheading->id }}">{{ $subheading->child_title }}</a>
+                                                    </li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                         <li class="more">
@@ -94,9 +110,12 @@
                                                 <!-- <i class='bx bxs-chevron-right arrow more-arrow'></i> -->
                                             </span>
                                             <ul class="more-sub-menu sub-menu">
-                                                <li><a href="#">Neumorphism</a></li>
-                                                <li><a href="#">Pre-loader</a></li>
-                                                <li><a href="#">Glassmorphism</a></li>
+                                                @foreach ($KidneyHealthCampSubheading as $subheading)
+                                                    <li>
+                                                        <a
+                                                            href="{{ url('pages/') . '/' . $subheading->id }}">{{ $subheading->child_title }}</a>
+                                                    </li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                         <li class="more">
@@ -104,9 +123,12 @@
                                                 <!-- <i class='bx bxs-chevron-right arrow more-arrow'></i> -->
                                             </span>
                                             <ul class="more-sub-menu sub-menu">
-                                                <li><a href="#">Neumorphism</a></li>
-                                                <li><a href="#">Pre-loader</a></li>
-                                                <li><a href="#">Glassmorphism</a></li>
+                                                @foreach ($GeneralCheckupSubheading as $subheading)
+                                                    <li>
+                                                        <a
+                                                            href="{{ url('pages/') . '/' . $subheading->id }}">{{ $subheading->child_title }}</a>
+                                                    </li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                         <li class="more">
@@ -114,21 +136,24 @@
                                                 <!-- <i class='bx bxs-chevron-right arrow more-arrow'></i> -->
                                             </span>
                                             <ul class="more-sub-menu sub-menu">
-                                                <li><a href="#">Neumorphism</a></li>
-                                                <li><a href="#">Pre-loader</a></li>
-                                                <li><a href="#">Glassmorphism</a></li>
+                                                @foreach ($OnlineConsulationSubheading as $subheading)
+                                                    <li>
+                                                        <a
+                                                            href="{{ url('pages/') . '/' . $subheading->id }}">{{ $subheading->child_title }}</a>
+                                                    </li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#">Blog</a>
+                                    <a href="{{ url('bloglisting') }}">Blog</a>
 
                                 </li>
-                                <li><a href="#">News & Events</a></li>
-                                <li><a href="#">Donate</a></li>
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="#">My Kidney</a></li>
+                                <li><a href="{{ url('newslisting') }}">News & Events</a></li>
+                                <li><a href="{{ url('mainpage/') . '/4' }}">Donate</a></li>
+                                <li><a href="{{ url('contact') }}">Contact</a></li>
+                                <li><a href="{{ url('mykideny') }}">My Kidney</a></li>
                             </ul>
                         </div>
                         <!-- <div class="search-box">
@@ -142,58 +167,66 @@
 
 
 
-                <!-- <nav class="navbar navbar-expand-lg navbar-light">
+                {{-- <nav class="navbar navbar-expand-lg navbar-light">
                     <a class="navbar-brand" href="/">
                         <img src="{{ asset('frontend/assets/images/logo.svg') }}" height="65" />
                     </a>
-                    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                        aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
                         <span class="navbar-toggler-icon fa icon-close fa-times"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarScroll">
                         <ul class="navbar-nav ms-auto me-2 my-2 my-lg-0 navbar-nav-scroll">
-                           
+
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
                                     About &nbsp;<i class="fas fa-angle-down"> </i>
                                 </a>
 
 
 
                                 <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                    @foreach($subheadings as $subheading )
-                                    <li>
-                                        <a class="dropdown-item" href="{{ url('pages/').'/'.$subheading->id }}">{{ $subheading->child_title }}</a>
-                                    </li>
+                                    @foreach ($subheadings as $subheading)
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="{{ url('pages/') . '/' . $subheading->id }}">{{ $subheading->child_title }}</a>
+                                        </li>
                                     @endforeach
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
                                     Kidney Health &nbsp;<i class="fas fa-angle-down"> </i>
                                 </a>
 
                                 <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
 
-                                    @foreach($headingskidneyhealths as $subheading )
-                                    <li>
-                                        <a class="dropdown-item" href="{{ url('pages/').'/'.$subheading->id }}">{{ $subheading->child_title }}</a>
-                                    </li>
+                                    @foreach ($headingskidneyhealths as $subheading)
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="{{ url('pages/') . '/' . $subheading->id }}">{{ $subheading->child_title }}</a>
+                                        </li>
                                     @endforeach
 
                                 </ul>
                             </li>
-                         
+
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
                                     Services &nbsp;<i class="fas fa-angle-down"> </i>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
 
-                                    @foreach($subheadingsServices as $subheading )
-                                    <li>
-                                        <a class="dropdown-item" href="{{ url('pages/').'/'.$subheading->id }}">{{ $subheading->child_title }}</a>
-                                    </li>
+                                    @foreach ($subheadingsServices as $subheading)
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="{{ url('pages/') . '/' . $subheading->id }}">{{ $subheading->child_title }}</a>
+                                        </li>
                                     @endforeach
 
                                 </ul>
@@ -205,20 +238,20 @@
                                 <a class="nav-link" href="{{ url('newslisting') }}">News & Events</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('mainpage/').'/4' }}">Donate</a>
+                                <a class="nav-link" href="{{ url('mainpage/') . '/4' }}">Donate</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('contact')}}">Contact Us</a>
+                                <a class="nav-link" href="{{ url('contact') }}">Contact Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('mykideny')}}">My Kidney</a>
+                                <a class="nav-link" href="{{ url('mykideny') }}">My Kidney</a>
                             </li>
                         </ul>
 
                     </div>
-                   
-                </nav> -->
+
+                </nav> --}}
             </div>
         </header>
         <!-- //header -->
-        <script src="{{ asset('frontend/assets/js/script.js')}}"></script>
+        <script src="{{ asset('frontend/assets/js/script.js') }}"></script>

@@ -55,6 +55,8 @@
 
                         @if($childcontent->Thumbnailimg)
                         <img src="../uploads/childcontentimg/{{ $childcontent->Thumbnailimg }}" height="100">
+                        <button> <a href="/deletechildcontentimage/{{$childcontent->id }}" > Remove </a> </button>
+
                         @endif
                         
                         
