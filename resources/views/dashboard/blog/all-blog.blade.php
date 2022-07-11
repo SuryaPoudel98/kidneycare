@@ -42,9 +42,9 @@
                
                  <td> <img src="uploads/Postimg/{{ $post->image }} " width="100px"> </td> 
                 <td>
-                    <a href="/edit-post/{{ $post->id}}" class="btn btn-info">Edit </a>
+                    <a href="/edit-blog/{{ $post->id}}" class="btn btn-info">Edit </a>
 
-                    <a href="/delete-post/{{ $post->id}}" class="btn btn-danger">Delete </a>
+                    <a href="/delete-blog/{{ $post->id}}" class="btn btn-danger">Delete </a>
                 </td>
 
 

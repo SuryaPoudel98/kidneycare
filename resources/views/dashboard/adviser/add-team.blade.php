@@ -6,21 +6,20 @@
     <div class="grid-form1">
 
 
-        <a href="{{ url('/all-team') }}" class="btn btn-primary float-end"> All Team Members </a>
+        <a href="{{ url('/all-adviser') }}" class="btn btn-primary float-end"> All Adviser </a>
 
-        @if(Session::has('team_updated'))
-        <p class="alert alert-success"> {{ Session::get('team_updated') }} </p>
+        @if(Session::has('team_added'))
+        <p class="alert alert-success"> {{ Session::get('team_added') }} </p>
         @endif
-        <form class="form-horizontal" action="{{ route('team.update') }}" method="POST" enctype="multipart/form-data">
+        <form class="form-horizontal" action="{{ route('adviser.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <input type="hidden" name="id" value="{{ $team->id }}" />
             <div class="form-group">
                 <div class="row">
                     <div class="col-sm-2 text-right">
                         <label for="Branch name"> Name:</label>
                     </div>
                     <div class="col-sm-10">
-                        <input type="text" name="name" placeholder="Enter Branch Name" value="{{ $team->name }}">
+                        <input type="text" name="name" placeholder="Enter Branch Name">
                     </div>
                 </div>
             </div>
@@ -33,13 +32,7 @@
                     <div class="col-sm-2 text-right">
                         <label for="image">Choose Photo: </label>
                     </div>
-
                     <div class="col-sm-10">
-                        @if($team->image)
-                        <img src="../uploads/teamimg/{{$team->image }}" height="100">
-                      
-                       
-                        @endif
                         <input type="file" name="image" placeholder="image" onchange="previewFile(this)">
                         <img id="previewImg" src="" alt="image" onerror='this.style.display = "none"'>
 
@@ -55,7 +48,7 @@
                         <label for="for Address"> Facebook Link: </label>
                     </div>
                     <div class="col-sm-10">
-                        <input type="text" name="facebook" placeholder="Enter Facebook Link" value="{{ $team->facebook }}">
+                        <input type="text" name="facebook" placeholder="Enter Facebook Link">
                     </div>
                 </div>
             </div>
@@ -65,7 +58,7 @@
                         <label for="Twitter"> Twitter Link: </label>
                     </div>
                     <div class="col-sm-10">
-                        <input type="text" name="twitter" placeholder="Enter Twitter link" value="{{ $team->twitter }}">
+                        <input type="text" name="twitter" placeholder="Enter Twitter link">
                     </div>
                 </div>
 
@@ -78,7 +71,7 @@
                         <label for="Gmail "> Gmail Link: </label>
                     </div>
                     <div class="col-sm-10">
-                        <input type="text" name="gmail" placeholder="Enter Gmail Link" value="{{ $team->gmail }}">
+                        <input type="text" name="gmail" placeholder="Enter Gmail Link">
                     </div>
                 </div>
 
@@ -92,7 +85,7 @@
                 <div class="row">
                     <div class="col-sm-2 text-right"></div>
                     <div class="col-sm-10">
-                        <button type="submit" class="btn btn-default">Update</button>
+                        <button type="submit" class="btn btn-default">Submit</button>
                     </div>
                 </div>
 

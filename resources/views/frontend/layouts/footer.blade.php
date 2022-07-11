@@ -27,7 +27,7 @@
                         <ul>
                             <h6 class="footer-title-29">Links</h6>
                             <li><a href="{{ url('blogpost') }}">Blog Posts</a></li>
-                            <li><a href="#privacy">Privacy policy</a></li>
+                            <li><a href="{{ url('newslisting') }}">News & Events</a></li>
                             <li><a href="{{url('contact')}}">Contact Us</a></li>
                             
                         </ul>
@@ -188,7 +188,7 @@
         });
 
     </script>
-    <script src="{{ asset('frontend/assets/js/jquery-3.3.1.min.js') }}"></script>
+   
    
     <!-- //Js scripts -->
 </body>

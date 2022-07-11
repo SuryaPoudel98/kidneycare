@@ -610,13 +610,35 @@ progress {
 
 .img-fluid {
   max-width: 100%;
+ 
+  width: 100%;
   height: auto;
+ 
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  /* border-radius: 4px 4px 0 0; */
+  position: relative;
+}
+
+
+.img-fluid-service {
+  max-width: 100%;
+ 
+  width: 100%;
+  height: 200px;
+ 
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  /* border-radius: 4px 4px 0 0; */
+  position: relative;
 }
 
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
-  border: 1px solid #dee2e6;
+  /* border: 1px solid #dee2e6; */
   border-radius: 0.25rem;
   max-width: 100%;
   height: auto;
@@ -4960,8 +4982,8 @@ fieldset:disabled .btn {
 .card-header {
   padding: 0.5rem 1rem;
   margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  background-color: white;
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.125); */
 }
 
 .card-header:first-child {

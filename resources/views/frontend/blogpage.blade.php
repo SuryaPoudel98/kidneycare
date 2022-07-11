@@ -23,19 +23,19 @@
 
     <!-- aboutblock1 section -->
     <section class="w3l-homeblock1 py-5" id="about">
-        <div class="container py-md-5 py-4">
+        <div class="container  py-4">
             <div class="row align-items-center">
                 <div class="col-lg-12 pe-xl-5">
                     @if($BlogDetails[0]->image)
 
 
 
-                    <img class="img-fluid" width="100%" src="{{url('uploads/Postimg/').'/'.$BlogDetails[0]->image }}">
+                    <img class="img-fluid" height="60%" src="{{url('uploads/Postimg/').'/'.$BlogDetails[0]->image }}">
 
                     @endif
 
 
-                    <h3 class="title-style mb-3">Welcome to <span>{{ $BlogDetails[0]->title ?? ''}}</span></h3>
+                    <!-- <h3 class="title-style mb-3">Welcome to <span>{{ $BlogDetails[0]->title ?? ''}}</span></h3> -->
                     <p> {!! $BlogDetails[0]->description ?? '' !!}  </p>
                     <div class="mt-4">
                         <!-- <ul class="service-list">

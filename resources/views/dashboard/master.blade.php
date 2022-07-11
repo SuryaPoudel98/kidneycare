@@ -144,6 +144,14 @@
                        
                         </li>
                         <li>
+                            <a href="all-boardmember" class=" hvr-bounce-to-right"><i class="fa fa-desktop nav_icon"></i> <span class="nav-label"> Board Member </span></a>
+                       
+                        </li>
+                        <li>
+                            <a href="all-adviser" class=" hvr-bounce-to-right"><i class="fa fa-desktop nav_icon"></i> <span class="nav-label"> Advisor </span></a>
+                       
+                        </li>
+                        <li>
                             <a href="/all-post" class=" hvr-bounce-to-right"><i class="fa fa-desktop nav_icon"></i> <span class="nav-label"> News And Events </span></a>
                        
                         </li>
@@ -157,6 +165,10 @@
                         </li>
                         <li>
                             <a href="/add-advertisement" class=" hvr-bounce-to-right"><i class="fa fa-desktop nav_icon"></i> <span class="nav-label"> Advertisement </span></a>
+                       
+                        </li>
+                        <li>
+                            <a href="/welcomeimage" class=" hvr-bounce-to-right"><i class="fa fa-desktop nav_icon"></i> <span class="nav-label">Welcome Image </span></a>
                        
                         </li>
                         <li>

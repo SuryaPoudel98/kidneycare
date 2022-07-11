@@ -6,12 +6,12 @@
     <div class="grid-form1">
 
 
-        <a href="{{ url('/all-team') }}" class="btn btn-primary float-end"> All Team Members </a>
+        <a href="{{ url('/all-adviser') }}" class="btn btn-primary float-end"> All Adviser </a>
 
         @if(Session::has('team_updated'))
         <p class="alert alert-success"> {{ Session::get('team_updated') }} </p>
         @endif
-        <form class="form-horizontal" action="{{ route('team.update') }}" method="POST" enctype="multipart/form-data">
+        <form class="form-horizontal" action="{{ route('adviser.update') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="id" value="{{ $team->id }}" />
             <div class="form-group">

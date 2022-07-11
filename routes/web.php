@@ -16,6 +16,10 @@ use App\Http\Controllers\PatientController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\AdvertisementController;
 use App\Http\Controllers\Mailcontroller;
+use App\Http\Controllers\AdviserController;
+use App\Http\Controllers\BoardmemberController;
+use App\Http\Controllers\WelcomeImageController;
+
 
 
 
@@ -36,7 +40,10 @@ Route::get('/branchpage/{id}',[FrontendController::class,'selectBranchDetailsFro
 //Route::get('/branchlisting',[FrontendController::class,'Branchlisting']);
 
 
+Route::get('/welcomeimage', [WelcomeImageController::class,'welcomeimage']);
 
+    
+Route::post('/addwelcomeimage', [WelcomeImageController::class,'addwelcomeimage']);
 
 
 //baranch listing
@@ -54,6 +61,17 @@ Route::get('/sendmail',[Mailcontroller::class,'index']);
 Route::get('/bloglisting', function () {
 
     return view('frontend.bloglisting');
+});
+
+
+
+Route::get('/boardmember', function () {
+
+    return view('frontend.boardmember');
+});
+Route::get('/advisor', function () {
+
+    return view('frontend.advisor');
 });
 
 
@@ -174,8 +192,8 @@ Route::get('/delete-parentpage/{id}',[ParentPageController::class,'deleteParentp
  Route::get('/add-team',[TeamController::class,'Addteam'])->name('team');
  Route::Post('/add-team',[TeamController::class,'TeamStore'])->name('team.store');
  Route::get('/all-team',[TeamController::class,'teams']);
-//  Route::get('/edit-team/{id}',[TeamController::class,'EditTeam']);
-//  Route::post('/update-team',[TeamController::class,'UpdateTeam'])->name('team.update');
+ Route::get('/edit-team/{id}',[TeamController::class,'EditTeam']);
+ Route::post('/update-team',[TeamController::class,'UpdateTeam'])->name('team.update');
  Route::get('/delete-team/{id}',[TeamController::class,'DeleleTeam']);
 
  //News post 
@@ -229,6 +247,27 @@ Route::get('/all-advertisement',[AdvertisementController::class,'advertisements'
 Route::get('/edit-advertisement/{id}',[AdvertisementController::class,'Editadvertisement'])->name('advertisement.edit');
 Route::post('/update-advertisement',[AdvertisementController::class,'Updateadvertisement'])->name('advertisement.update');
 Route::get('/delete-advertisement/{id}',[AdvertisementController::class,'Deleteadvertisement'])->name('advertisement.delete');
+
+
+
+//our adviser
+Route::get('/add-adviser',[AdviserController::class,'Addadviser'])->name('adviser');
+Route::Post('/add-adviser',[AdviserController::class,'adviserStore'])->name('adviser.store');
+Route::get('/all-adviser',[AdviserController::class,'advisers']);
+Route::get('/edit-adviser/{id}',[AdviserController::class,'Editadviser']);
+Route::post('/update-adviser',[AdviserController::class,'Updateadviser'])->name('adviser.update');
+Route::get('/delete-adviser/{id}',[AdviserController::class,'Deleleadviser']);
+
+
+
+
+//our board member
+Route::get('/add-boardmember',[BoardmemberController::class,'Addboardmember'])->name('boardmember');
+Route::Post('/add-boardmember',[BoardmemberController::class,'boardmemberStore'])->name('boardmember.store');
+Route::get('/all-boardmember',[BoardmemberController::class,'boardmembers']);
+Route::get('/edit-boardmember/{id}',[BoardmemberController::class,'Editboardmember']);
+Route::post('/update-boardmember',[BoardmemberController::class,'Updateboardmember'])->name('boardmember.update');
+Route::get('/delete-boardmember/{id}',[BoardmemberController::class,'Deleleboardmember']);
 
 
 

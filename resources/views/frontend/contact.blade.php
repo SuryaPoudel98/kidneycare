@@ -30,12 +30,12 @@
                 <div class="col-lg-3 col-sm-6 contact-info mt-md-0 mt-4">
                     <i class="fas fa-headset"></i>
                     <h4>Phone</h4>
-                    <p><a href="tel:+977 9851233477">+977 9851233477</a></p>
+                    <p><a href="tel: +977 9851334636">+977 9851334636</a></p>
                 </div>
                 <div class="col-lg-3 col-sm-6 contact-info mt-lg-0 mt-4">
                     <i class="fas fa-envelope-open-text"></i>
                     <h4>Email</h4>
-                    <p><a href="mailto:info@kindeycare.com.np" class="email">info@kindeycare.com.np</a></p>
+                    <p><a href="mailto:caremykidney@gmail.com" class="email">caremykidney@gmail.com</a></p>
                 </div>
                 <div class="col-lg-3 col-sm-6 contact-info mt-lg-0 mt-4">
                     <i class="fas fa-user-clock"></i>
@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="form-inner-cont mx-auto" style="max-width:800px">
-                <form action="https://sendmail.w3layouts.com/submitForm" method="post" class="signin-form">
+                <form action="#" method="post" class="signin-form">
                     <div class="row align-form-map">
                         <div class="col-sm-6 form-input">
                             <input type="text" name="w3lName" id="w3lName" placeholder="Name" />

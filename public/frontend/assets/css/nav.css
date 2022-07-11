@@ -88,6 +88,7 @@ nav .navbar .links li .arrow {
 
 nav .navbar .links li .sub-menu {
   position: absolute;
+  min-width: 230px;
   top: 70px;
   left: 0;
   line-height: 40px;

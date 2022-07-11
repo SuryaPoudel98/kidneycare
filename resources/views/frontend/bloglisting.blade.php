@@ -43,7 +43,7 @@ $selectblogs = $sc->selectBlog();
                            </div>
                         <div class="about-content">
                             <h5 class="mb-3"><a href="blogpage/{{ $selectblog->id }}">{{ $selectblog->title }}</a></h5>
-                            <p>{!! substr($selectblog->description , 0, 200) !!}</p>
+                            <!-- <p>{!! substr($selectblog->description , 0, 200) !!}</p> -->
                           
                         </div>
                     </div>

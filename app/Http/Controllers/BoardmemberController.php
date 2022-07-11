@@ -3,19 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Team;
+use App\Models\Boardmember;
+
 use Illuminate\Support\Facades\File;
 
-class TeamController extends Controller
+
+
+
+class BoardmemberController extends Controller
 {
     //
-
-    public function Addteam()
+    public function Addboardmember()
     {
-        return view('dashboard.team.add-team');
+        return view('dashboard.boardmember.add-team');
     }
 
-    public function TeamStore(Request $request)
+    public function boardmemberStore(Request $request)
     {
         $request->validate([
             'name' => 'required',
@@ -23,7 +26,7 @@ class TeamController extends Controller
 
 
         ]);
-        $team = new Team();
+        $team = new Boardmember();
         $team->name = $request->name;
         $team->facebook = $request->facebook;
         $team->twitter = $request->twitter;
@@ -40,25 +43,25 @@ class TeamController extends Controller
             $team->image = $imageName;
         }
         $team->save();
-        return redirect()->back()->with('team_added', 'Team    added successfully');
+        return redirect()->back()->with('team_added', 'Board member   added successfully');
     }
 
 
 
-    public function teams()
+    public function boardmembers()
     {
-        $teams = Team::all();
+        $teams = Boardmember::all();
 
-        return view('dashboard.team.all-team', compact('teams'));
+        return view('dashboard.boardmember.all-team', compact('teams'));
     }
-    public function EditTeam($id)
+    public function Editboardmember($id)
     {
-        $team = Team::FindorFail($id);
-        return view('dashboard.team.edit-team', compact('team'));
+        $team = Boardmember::FindorFail($id);
+        return view('dashboard.boardmember.edit-team', compact('team'));
     }
-    public function UpdateTeam(Request $request)
+    public function Updateboardmember(Request $request)
     {
-        $team = Team::find($request->id);
+        $team = Boardmember::find($request->id);
         $team->name = $request->name;
         $team->facebook = $request->facebook;
         $team->twitter = $request->twitter;
@@ -79,13 +82,13 @@ class TeamController extends Controller
 
 
         $team->update();
-        return back()->with('team_updated', 'Team updated successfully is successfully updated');
+        return back()->with('team_updated', 'Board member  updated successfully is successfully updated');
     }
 
-    public function DeleleTeam($id)
+    public function Deleleboardmember($id)
     {
-        $team = Team::find($id);
+        $team = Boardmember::find($id);
         $team->delete();
-        return redirect()->back()->with('team_deleted', 'Team    deleted  successfully');
+        return redirect()->back()->with('team_deleted', 'Board member    deleted  successfully');
     }
 }

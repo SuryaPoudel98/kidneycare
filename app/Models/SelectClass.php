@@ -10,6 +10,8 @@ use App\Models\Branch;
 use App\Models\Team;
 use App\Models\Advertisement;
 use App\Models\ChildContent;
+use App\Models\Boardmember;
+use App\Models\Adviser;
 
 
 
@@ -34,6 +36,16 @@ class SelectClass extends Model
 
 
         $advertisements = Advertisement::select('image', 'title')->where('position', $position)->get();
+
+        return $advertisements;
+    }
+
+
+    public function selectAdvertisementForSlide()
+    {
+
+
+        $advertisements = Advertisement::select('image', 'title')->where('position', '>', 5)->get();
 
         return $advertisements;
     }
@@ -93,6 +105,11 @@ class SelectClass extends Model
         $selectNews = Post::orderBy('id', 'DESC')->take(2)->get();
         return  $selectNews;
     }
+    public function selectWelcomeimg()
+    {
+        $selectImage= WelcomeImage::find(1);
+        return  $selectImage;
+    }
 
 
     public function selectBranch()
@@ -106,6 +123,17 @@ class SelectClass extends Model
         $teams = Team::all();
         return  $teams;
     }
+    public function selectBoardMember()
+    {
+        $teams = Boardmember::all();
+        return  $teams;
+    }
+
+    public function selectAdvisor()
+    {
+        $teams = Adviser::all();
+        return  $teams;
+    }
 
     public function selectBlog()
     {
@@ -115,7 +143,7 @@ class SelectClass extends Model
 
     public function SelectServices($searchKey)
     {
-        $selectServices=\DB::select("select child_contents.childpage_id,child_title,Thumbnailimg from child_pages inner join child_contents  on child_contents.childpage_id=child_pages.id inner join parent_pages on parent_pages.id=child_pages.parentpage_id where parent_pages.title='".$searchKey."'");
+        $selectServices=\DB::select("select child_contents.text, child_contents.childpage_id,child_title,Thumbnailimg from child_pages inner join child_contents  on child_contents.childpage_id=child_pages.id inner join parent_pages on parent_pages.id=child_pages.parentpage_id where parent_pages.title='".$searchKey."'");
 
         return $selectServices;
         //dd( $selectServices[0]);

@@ -7,7 +7,7 @@
 
 
             <div class="pull-left" style="margin-top: 10px;">
-                <a class="btn btn-primary" href=" {{ url('/add-team') }}"> Add New Team Member</a>
+                <a class="btn btn-primary" href=" {{ url('/add-boardmember') }}"> Add New Boardmember Member</a>
             </div>
         </div>
     </div>
@@ -50,8 +50,8 @@
                  <td> <img src="uploads/teamimg/{{$team->image }} " width="100px"> </td> 
                 <td>
                   
-                    <a href="/edit-team/{{ $team->id}}" class="btn btn-info">Edit </a>
-                    <a href="/delete-team/{{$team->id}}" class="btn btn-danger">Delete </a>
+                    <a href="/edit-boardmember/{{ $team->id}}" class="btn btn-info">Edit </a>
+                    <a href="/delete-boardmember/{{$team->id}}" class="btn btn-danger">Delete </a>
                 </td>
 
 

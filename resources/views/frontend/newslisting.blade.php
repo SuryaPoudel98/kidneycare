@@ -42,7 +42,7 @@ $newsEvents = $sc->selectNews();
                            </div>
                         <div class="about-content">
                             <h5 class="mb-3"><a href="news/{{ $newsEvent->id }}">{{ $newsEvent->title }}</a></h5>
-                            <p>{!! substr($newsEvent->description , 0, 200) !!}</p>
+                            <!-- <p>{!! substr($newsEvent->description , 0, 200) !!}</p> -->
                           
                         </div>
                     </div>

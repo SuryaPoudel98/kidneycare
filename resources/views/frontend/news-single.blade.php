@@ -35,7 +35,7 @@
                     @endif
 
 
-                    <h3 class="title-style mb-3">Welcome to <span>{{ $NewsContentDetails[0]->title ?? ''}}</span></h3>
+                    <!-- <h3 class="title-style mb-3">Welcome to <span>{{ $NewsContentDetails[0]->title ?? ''}}</span></h3> -->
                     <p> {!! $NewsContentDetails[0]->description ?? '' !!} </p>
                     <div class="mt-4">
                         <!-- <ul class="service-list">
